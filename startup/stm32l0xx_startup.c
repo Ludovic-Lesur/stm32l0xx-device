@@ -16,8 +16,11 @@ typedef void (*pFunc)(void);
 
 /*** STM32L0XX DEVICE local functions declaration ***/
 
-// Cortex-M0+ interrupts.
+// Default interrupt handler.
 void Default_Handler(void);
+// Weak definition of main function.
+void main(void)                             __attribute__ ((weak, alias("Default_Handler")));
+// Cortex-M0+ interrupts.
 void Reset_Handler(void);
 void NMI_Handler(void)                      __attribute__ ((weak, alias("Default_Handler")));
 void HardFault_Handler(void)                __attribute__ ((weak, alias("Default_Handler")));
