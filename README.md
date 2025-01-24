@@ -13,6 +13,7 @@ Here is the versions compatibility table:
 
 | **stm32l0xx-device** | **stm32l0xx-registers** |
 |:---:|:---:|
+| [sw1.1](https://github.com/Ludovic-Lesur/stm32l0xx-device/releases/tag/sw1.1) | >= [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-registers/releases/tag/sw1.0) |
 | [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-device/releases/tag/sw1.0) | >= [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-registers/releases/tag/sw1.0) |
 
 # Compilation flags
