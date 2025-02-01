@@ -6,15 +6,8 @@ This repository contains the **startup code and linker scripts** of the STM32L0x
 
 The drivers rely on:
 
-* The **STM32L0xx registers** defined in the [stm32l0xx-registers](https://github.com/Ludovic-Lesur/stm32l0xx-registers) repository.
+* An external `types.h` header file defining the **standard C types** of the targeted MCU.
 * The `main` application function which is called at the end of the **reset handler**.
-
-Here is the versions compatibility table:
-
-| **stm32l0xx-device** | **stm32l0xx-registers** |
-|:---:|:---:|
-| [sw1.1](https://github.com/Ludovic-Lesur/stm32l0xx-device/releases/tag/sw1.1) | >= [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-registers/releases/tag/sw1.0) |
-| [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-device/releases/tag/sw1.0) | >= [sw1.0](https://github.com/Ludovic-Lesur/stm32l0xx-registers/releases/tag/sw1.0) |
 
 # Compilation flags
 
