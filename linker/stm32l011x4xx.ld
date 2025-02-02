@@ -7,9 +7,13 @@
 
 MEMORY
 {
-    FLASH (rx)  : ORIGIN = 0x08000000, LENGTH = 16K
-    RAM   (rwx) : ORIGIN = 0x20000000, LENGTH = 2K
+    FLASH  (rx)  : ORIGIN = 0x08000000, LENGTH = 16K
+    RAM    (rwx) : ORIGIN = 0x20000000, LENGTH = 2K
+    EEPROM (rw)  : ORIGIN = 0x08080000, LENGTH = 512
 }
+
+__eeprom_address__ = ORIGIN(EEPROM);
+__eeprom_size_bytes__ = LENGTH(EEPROM);
 
 ENTRY(Reset_Handler)
 
