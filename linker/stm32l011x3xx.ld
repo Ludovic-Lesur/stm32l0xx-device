@@ -42,7 +42,6 @@ SECTIONS
     } > FLASH
     __exidx_end = .;
 
-
     __etext = .;
 
     .data :
@@ -54,7 +53,7 @@ SECTIONS
         *(.data.*)
         . = ALIGN(4);
         __data_end__ = .;
-    } > RAM
+    } > RAM AT > FLASH
 
     .bss :
     {
