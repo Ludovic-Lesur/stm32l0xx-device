@@ -55,7 +55,7 @@ SECTIONS
         __data_end__ = .;
     } > RAM
 
-    .bss :
+    .bss (NOLOAD) :
     {
         . = ALIGN(4);
         __bss_start__ = .;
