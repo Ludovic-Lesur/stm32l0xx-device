@@ -59,12 +59,12 @@ void LPUART1_IRQHandler(void)               __attribute__ ((weak, alias("Default
 
 /*** STM32L0XX DEVICE linker variables ***/
 
-extern uint32_t __etext;
+extern uint32_t __flash_end__;
 extern uint32_t __data_start__;
 extern uint32_t __data_end__;
 extern uint32_t __bss_start__;
 extern uint32_t __bss_end__;
-extern uint32_t __StackTop;
+extern uint32_t __stack_top__;
 
 /*** STM32L0XX DEVICE local global variables ***/
 
@@ -74,7 +74,7 @@ static uint8_t heap[STM32L0XX_DEVICE_HEAP_SIZE] __attribute__ ((aligned(8), used
 #endif
 const pFunc __Vectors[] __attribute__ ((section(".vectors"))) = {
     // Cortex-M0+ interrupts.
-    (pFunc) ((uint32_t) &__StackTop),
+    (pFunc) ((uint32_t) &__stack_top__),
     Reset_Handler,
     NMI_Handler,
     HardFault_Handler,
@@ -133,7 +133,7 @@ void Reset_Handler(void) {
     uint32_t* pSrc;
     uint32_t* pDest;
     // Init RAM.
-    pSrc = &__etext;
+    pSrc = &__flash_end__;
     pDest = &__data_start__;
     for (; pDest < &__data_end__;) {
         *pDest++ = *pSrc++;

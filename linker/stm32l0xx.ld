@@ -42,9 +42,9 @@ SECTIONS
     } > FLASH
     __exidx_end = .;
 
-    __etext = ALIGN(4);
+    __flash_end__ = ALIGN(4);
 
-    .data : AT (__etext)
+    .data : AT (__flash_end__)
     {
         . = ALIGN(4);
         __data_start__ = .;
@@ -66,29 +66,20 @@ SECTIONS
         __bss_end__ = .;
     } > RAM
 
-    .heap (COPY):
+    .heap (COPY) :
     {
-        __HeapBase = .;
-        __end__ = .;
-        end = __end__;
+        __heap_start__ = .;
         KEEP(*(.heap*))
-        __HeapLimit = .;
+        __heap_end__ = .;
     } > RAM
 
-    /* .stack_dummy section doesn't contains any symbols. It is only
-     * used for linker to calculate size of stack sections, and assign
-     * values to stack symbols later */
-    .stack_dummy (COPY):
+    .stack (COPY) :
     {
         KEEP(*(.stack*))
     } > RAM
 
-    /* Set stack top to end of RAM, and stack limit move down by
-     * size of stack_dummy section */
-    __StackTop = ORIGIN(RAM) + LENGTH(RAM);
-    __StackLimit = __StackTop - SIZEOF(.stack_dummy);
-    PROVIDE(__stack = __StackTop);
+    __stack_top__ = ORIGIN(RAM) + LENGTH(RAM);
+    __stack_limit__ = __stack_top__ - SIZEOF(.stack);
 
-    /* Check if data + heap + stack exceeds RAM limit */
-    ASSERT(__StackLimit >= __HeapLimit, "region RAM overflowed with stack")
+    ASSERT((__stack_limit__ >= __heap_end__), "Region RAM overflowed with stack")
 }
