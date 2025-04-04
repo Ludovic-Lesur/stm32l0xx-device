@@ -44,7 +44,7 @@ SECTIONS
 
     __flash_end__ = ALIGN(4);
 
-    .data : AT (__flash_end__)
+    .data : AT(__flash_end__)
     {
         . = ALIGN(4);
         __data_start__ = .;
