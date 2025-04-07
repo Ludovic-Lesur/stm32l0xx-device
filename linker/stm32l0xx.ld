@@ -2,7 +2,7 @@
  * stm32l0xx.ld
  *
  *  Created on: 04 apr. 2025
- *      Author: ARM
+ *      Author: Ludo
  */
 
 MEMORY
@@ -22,8 +22,6 @@ SECTIONS
     .text :
     {
         KEEP(*(.vectors))
-        KEEP(*(.ResetHandler))
-        KEEP(*(.DefaultHandler))
         *(.text*)
         *(.rodata*)
         . = ALIGN(4);

@@ -2,7 +2,7 @@
  * stm32l011x3xx.ld
  *
  *  Created on: 19 jan. 2025
- *      Author: ARM
+ *      Author: Ludo
  */
 
 __flash_size__ = 8K;

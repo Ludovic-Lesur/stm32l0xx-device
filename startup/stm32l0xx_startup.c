@@ -2,7 +2,7 @@
  * stm32l0xx_startup.c
  *
  *  Created on: 19 jan. 2025
- *      Author: ARM
+ *      Author: Ludo
  */
 
 #ifndef STM32L0XX_DEVICE_DISABLE_FLAGS_FILE
@@ -69,9 +69,11 @@ extern uint32_t __stack_top__;
 /*** STM32L0XX DEVICE local global variables ***/
 
 static uint8_t stack[STM32L0XX_DEVICE_STACK_SIZE] __attribute__ ((aligned(8), used, section(".stack")));
+
 #if (STM32L0XX_DEVICE_HEAP_SIZE > 0)
 static uint8_t heap[STM32L0XX_DEVICE_HEAP_SIZE] __attribute__ ((aligned(8), used, section(".heap")));
 #endif
+
 const pFunc __Vectors[] __attribute__ ((section(".vectors"))) = {
     // Cortex-M0+ interrupts.
     (pFunc) ((uint32_t) &__stack_top__),
