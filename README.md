@@ -14,5 +14,6 @@ The drivers rely on:
 | **Flag name** | **Value** | **Description** |
 |:---:|:---:|:---:|
 | `STM32L0XX_DEVICE_DISABLE_FLAGS_FILE` | `defined` / `undefined` | Disable the `stm32l0xx_device_flags.h` header file inclusion when compilation flags are given in the project settings or by command line. |
+| `STM32L0XX_DEVICE_DISABLE` | `defined` / `undefined` | Disable the STM32L0xx device code. |
 | `STM32L0XX_DEVICE_STACK_SIZE` | `<value>` | Size of the stack to reserve in RAM memory. |
 | `STM32L0XX_DEVICE_HEAP_SIZE` | `<value>` | Size of the heap to reserve in RAM memory. |

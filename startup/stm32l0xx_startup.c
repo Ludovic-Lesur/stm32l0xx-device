@@ -8,6 +8,9 @@
 #ifndef STM32L0XX_DEVICE_DISABLE_FLAGS_FILE
 #include "stm32l0xx_device_flags.h"
 #endif
+
+#ifndef STM32L0XX_DEVICE_DISABLE
+
 #include "types.h"
 
 /*** STM32L0XX DEVICE structures ***/
@@ -156,3 +159,5 @@ void Default_Handler(void) {
         __asm volatile ("wfi");
     }
 }
+
+#endif /* STM32L0XX_DEVICE_DISABLE */
