@@ -28,7 +28,6 @@ cd build
 cmake -DCMAKE_TOOLCHAIN_FILE="<toolchain_file_path>" \
       -DTOOLCHAIN_PATH="<arm-none-eabi-gcc_path>" \
       -DTYPES_PATH="<types_file_path>" \
-      -DEMBEDDED_UTILS_PATH="<embedded-utils_path>" \
       -DSTM32L0XX_DEVICE_STACK_SIZE=0x00000400 \
       -DSTM32L0XX_DEVICE_HEAP_SIZE=0x00000C00 \
       -G "Unix Makefiles" ..

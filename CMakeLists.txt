@@ -47,20 +47,11 @@ if(${BUILD_MODE} STREQUAL STATIC)
     # Create flags file.
     configure_file(stm32l0xx_device_flags.h.in stm32l0xx_device_flags.h @ONLY)
     
-    # Fixed compilation flags of dependencies.
-    if(${BUILD_MODE} STREQUAL STATIC)
-        target_compile_definitions(${PROJECT_NAME}
-            PRIVATE
-                EMBEDDED_UTILS_DISABLE_FLAGS_FILE
-        )
-    endif()
-    
     # Dependencies folders.
     target_include_directories(${PROJECT_NAME}
         PUBLIC
             ${CMAKE_CURRENT_BINARY_DIR}
             ${TYPES_PATH}
-            ${EMBEDDED_UTILS_PATH}/inc
     )
     
     # Print archive size.
