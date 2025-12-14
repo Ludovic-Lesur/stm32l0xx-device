@@ -18,7 +18,7 @@ The drivers rely on:
 | `STM32L0XX_DEVICE_STACK_SIZE` | `<value>` | Size of the stack to reserve in RAM memory. |
 | `STM32L0XX_DEVICE_HEAP_SIZE` | `<value>` | Size of the heap to reserve in RAM memory. |
 
-## Build
+# Build
 
 A static library can be compiled by command line with `cmake`.
 

@@ -38,7 +38,7 @@ if(${BUILD_MODE} STREQUAL STATIC)
     add_compilation_flag(STM32L0XX_DEVICE_HEAP_SIZE "Size of the heap to reserve in RAM memory." 0x00000C00)
     
     # Remove OFF flags from list and keep flags set to value 0.
-    foreach(FLAG ${COMPILATION_FLAGS_LIST} )
+    foreach(FLAG ${COMPILATION_FLAGS_LIST})
         if((NOT ${FLAG} STREQUAL OFF) AND (NOT ${FLAG} STREQUAL ON))
             set(${FLAG} "(${${FLAG}})")
         endif()
